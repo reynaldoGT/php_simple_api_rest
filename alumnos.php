@@ -13,18 +13,27 @@ class Alumno
     {
         $this->nombre = $nombre;
     }
-    public function getId(){
+    public function getId()
+    {
         return $this->id;
     }
-    public function getNombre(){
+    public function getNombre()
+    {
         return $this->nombre;
     }
 
-    function toArray(){
-        return array(
-            'id'=>$this->id,
-            'nombre'=>$this->nombre
-        );
-        
+    function toArray($access = '')
+    {
+        if ($access == 'total') {
+            return array(
+                'id' => $this->id,
+                'nombre' => $this->nombre
+            );
+        } else {
+            return array(
+                'id' => $this->id,
+
+            );
+        }
     }
 }
